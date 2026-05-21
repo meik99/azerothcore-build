@@ -6,6 +6,7 @@ resources:
       repository: harbor.rynkix.com/azerothcore/authserver
       username: ((username))
       password: ((password))
+    skip_get: true
   - name: worldserver
     type: registry-image
     icon: docker
@@ -13,6 +14,7 @@ resources:
       repository: harbor.rynkix.com/azerothcore/worldserver
       username: ((username))
       password: ((password))
+    skip_get: true
   - name: db-import
     type: registry-image
     icon: docker
@@ -20,6 +22,7 @@ resources:
       repository: harbor.rynkix.com/azerothcore/db-import
       username: ((username))
       password: ((password))
+    skip_get: true
   - name: client-data
     type: registry-image
     icon: docker
@@ -27,6 +30,7 @@ resources:
       repository: harbor.rynkix.com/azerothcore/client-data
       username: ((username))
       password: ((password))
+    skip_get: true
   - name: tools
     type: registry-image
     icon: docker
@@ -34,11 +38,13 @@ resources:
       repository: harbor.rynkix.com/azerothcore/tools
       username: ((username))
       password: ((password))
+    skip_get: true
   - name: ci
     type: git
     icon: github
     source:
       uri: https://github.com/meik99/azerothcore-build.git
+
   - name: azerothcore
     type: git
     icon: github
@@ -255,6 +261,7 @@ jobs:
       - in_parallel:
           - do:
               - task: authserver
+                privileged: true
                 file: ci/build-stage.yaml
                 vars:
                   target: authserver
@@ -266,6 +273,7 @@ jobs:
 
           - do:
               - task: worldserver
+                privileged: true
                 file: ci/build-stage.yaml
                 vars:
                   target: worldserver
@@ -276,6 +284,7 @@ jobs:
                   image: worldserver/image.tar
           - do:
               - task: build-db-import
+                privileged: true
                 file: ci/build-stage.yaml
                 vars:
                   target: db-import
@@ -286,6 +295,7 @@ jobs:
                   image: db-import/image.tar
           - do:
               - task: client-data
+                privileged: true
                 file: ci/build-stage.yaml
                 vars:
                   target: client-data
@@ -297,6 +307,7 @@ jobs:
 
           - do:
               - task: build-tools
+                privileged: true
                 file: ci/build-stage.yaml
                 vars:
                   target: tools

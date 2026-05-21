@@ -275,9 +275,9 @@ jobs:
                 file: ci/build-stage.yaml
                 vars:
                   target: db-import
-              - put: db-impor
+              - put: db-import
                 params:
-                  image: db-impor/image.tar
+                  image: db-import/image.tar
           - do:
               - task: client-data
                 file: ci/build-stage.yaml

@@ -1,70 +1,81 @@
-platform: linux
-image_resource:
-  type: registry-image
-  source:
-    repository: concourse/oci-build-task
-inputs:
-  - name: azerothcore
-    path: .
-  - name: playerbots
-    path: modules/playerbots
-  - name: autobalance
-    path: modules/autobalance
-  - name: solo-lfg
-    path: modules/solo-lfg
-  - name: transmog
-    path: modules/transmog
-  - name: quest-loot-party
-    path: modules/quest-loot-party
-  - name: rdf-expansion
-    path: modules/rdf-expansion
-  - name: tcg-vendors
-    path: modules/tcg-vendors
-  - name: time-is-time
-    path: modules/time-is-time
-  - name: junk-to-gold
-    path: modules/junk-to-gold
-  - name: weather-vib
-    path: modules/weather-vib
-  - name: pvp-titles
-    path: modules/pvp-titles
-  - name: playerbot-guildhouse
-    path: modules/playerbot-guildhouse
-  - name: playerbot-level-brackets
-    path: modules/playerbot-level-brackets
-  - name: playerbot-characters
-    path: modules/playerbot-characters
-  - name: guild-levels
-    path: modules/guild-levels
-  - name: dead-means-dead
-    path: modules/dead-means-dead
-  - name: war-effort
-    path: modules/war-effort
-  - name: aoe-loot
-    path: modules/aoe-loot
-  - name: ahbot-plus
-    path: modules/ahbot-plus
-  - name: account-achievements
-    path: modules/account-achievements
-  - name: low-level-rbg
-    path: modules/low-level-rbg
-  - name: fly-in-old-world
-    path: modules/fly-in-old-world
-  - name: challenge-modes
-    path: modules/challenge-modes
-  - name: desertion-warning
-    path: modules/desertion-warning
-  - name: duel-reset
-    path: modules/duel-reset
-  - name: cross-faction-battleground
-    path: modules/cross-faction-battleground
-  - name: bgqueue-checker
-    path: modules/bgqueue-checker
-  - name: breaking-news
-    path: modules/breaking-news
-params:
-  CONTEXT: .
-  DOCKERFILE: apps/docker/Dockerfile
-  TARGET: ((target))
-run:
-  path: build
+do:
+  - task: build-((target))
+    privileged: true
+    platform: linux
+    image_resource:
+      type: registry-image
+      source:
+        repository: concourse/oci-build-task
+    inputs:
+      - name: azerothcore
+        path: .
+      - name: playerbots
+        path: modules/playerbots
+      - name: autobalance
+        path: modules/autobalance
+      - name: solo-lfg
+        path: modules/solo-lfg
+      - name: transmog
+        path: modules/transmog
+      - name: quest-loot-party
+        path: modules/quest-loot-party
+      - name: rdf-expansion
+        path: modules/rdf-expansion
+      - name: tcg-vendors
+        path: modules/tcg-vendors
+      - name: time-is-time
+        path: modules/time-is-time
+      - name: junk-to-gold
+        path: modules/junk-to-gold
+      - name: weather-vib
+        path: modules/weather-vib
+      - name: pvp-titles
+        path: modules/pvp-titles
+      - name: playerbot-guildhouse
+        path: modules/playerbot-guildhouse
+      - name: playerbot-level-brackets
+        path: modules/playerbot-level-brackets
+      - name: playerbot-characters
+        path: modules/playerbot-characters
+      - name: guild-levels
+        path: modules/guild-levels
+      - name: dead-means-dead
+        path: modules/dead-means-dead
+      - name: war-effort
+        path: modules/war-effort
+      - name: aoe-loot
+        path: modules/aoe-loot
+      - name: ahbot-plus
+        path: modules/ahbot-plus
+      - name: account-achievements
+        path: modules/account-achievements
+      - name: low-level-rbg
+        path: modules/low-level-rbg
+      - name: fly-in-old-world
+        path: modules/fly-in-old-world
+      - name: challenge-modes
+        path: modules/challenge-modes
+      - name: desertion-warning
+        path: modules/desertion-warning
+      - name: duel-reset
+        path: modules/duel-reset
+      - name: cross-faction-battleground
+        path: modules/cross-faction-battleground
+      - name: bgqueue-checker
+        path: modules/bgqueue-checker
+      - name: breaking-news
+        path: modules/breaking-news
+    params:
+      CONTEXT: .
+      DOCKERFILE: apps/docker/Dockerfile
+      TARGET: ((target))
+    run:
+      path: build
+    outputs:
+      - name: image
+    output_mapping:
+      image: ((target))
+
+  - put: ((target))
+    params:
+      image: ((target))/image.tar

@@ -1,4 +1,39 @@
 resources:
+  - name: authserver
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/authserver
+      username: ((username))
+      password: ((password))
+  - name: worldserver
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/worldserver
+      username: ((username))
+      password: ((password))
+  - name: db-import
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/db-import
+      username: ((username))
+      password: ((password))
+  - name: client-data
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/client-data
+      username: ((username))
+      password: ((password))
+  - name: tools
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/tools
+      username: ((username))
+      password: ((password))
   - name: ci
     type: git
     icon: github
@@ -218,32 +253,27 @@ jobs:
             trigger: true
           - get: ci
       - in_parallel:
-          - task: build-authserver
-            privileged: true
+          - task: authserver
             file: ci/build-stage.yaml
             vars:
-              target: authserver
+              target: authserver            
 
-          - task: build-worldserver
-            privileged: true
+          - task: worldserver
             file: ci/build-stage.yaml
             vars:
               target: worldserver
 
           - task: build-db-import
-            privileged: true
             file: ci/build-stage.yaml
             vars:
               target: db-import
 
-          - task: build-client-data
-            privileged: true
+          - task: client-data
             file: ci/build-stage.yaml
             vars:
               target: client-data
 
           - task: build-tools
-            privileged: true
             file: ci/build-stage.yaml
             vars:
               target: tools

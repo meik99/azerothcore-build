@@ -123,7 +123,7 @@ resources:
     type: git
     icon: github
     source:
-      uri: "https://github.com/kjack9/mod-dead-means-dead.git"
+      uri: "https://github.com/brighton-chi/mod-dead-means-dead.git"
   - name: "mod-war-effort"
     type: git
     icon: github

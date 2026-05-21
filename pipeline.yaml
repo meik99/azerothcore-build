@@ -1,4 +1,9 @@
 resources:
+  - name: ci
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/meik99/azerothcore-build.git
   - name: azerothcore
     type: git
     icon: github
@@ -211,33 +216,34 @@ jobs:
             trigger: true
           - get: breaking-news
             trigger: true
+          - get: ci
       - in_parallel:
           - task: build-authserver
             privileged: true
-            file: build-stage.yaml
+            file: ci/build-stage.yaml
             vars:
               target: authserver
 
           - task: build-worldserver
             privileged: true
-            file: build-stage.yaml
+            file: ci/build-stage.yaml
             vars:
               target: worldserver
 
           - task: build-db-import
             privileged: true
-            file: build-stage.yaml
+            file: ci/build-stage.yaml
             vars:
               target: db-import
 
           - task: build-client-data
             privileged: true
-            file: build-stage.yaml
+            file: ci/build-stage.yaml
             vars:
               target: client-data
 
           - task: build-tools
             privileged: true
-            file: build-stage.yaml
+            file: ci/build-stage.yaml
             vars:
               target: tools

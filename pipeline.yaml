@@ -6,7 +6,6 @@ resources:
       repository: harbor.rynkix.com/azerothcore/authserver
       username: ((username))
       password: ((password))
-    skip_get: true
   - name: worldserver
     type: registry-image
     icon: docker
@@ -14,7 +13,6 @@ resources:
       repository: harbor.rynkix.com/azerothcore/worldserver
       username: ((username))
       password: ((password))
-    skip_get: true
   - name: db-import
     type: registry-image
     icon: docker
@@ -22,7 +20,6 @@ resources:
       repository: harbor.rynkix.com/azerothcore/db-import
       username: ((username))
       password: ((password))
-    skip_get: true
   - name: client-data
     type: registry-image
     icon: docker
@@ -30,7 +27,6 @@ resources:
       repository: harbor.rynkix.com/azerothcore/client-data
       username: ((username))
       password: ((password))
-    skip_get: true
   - name: tools
     type: registry-image
     icon: docker
@@ -38,7 +34,6 @@ resources:
       repository: harbor.rynkix.com/azerothcore/tools
       username: ((username))
       password: ((password))
-    skip_get: true
   - name: ci
     type: git
     icon: github

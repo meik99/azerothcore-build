@@ -58,8 +58,6 @@ inputs:
     path: modules/duel-reset
   - name: cross-faction-battleground
     path: modules/cross-faction-battleground
-  - name: bgqueue-checker
-    path: modules/bgqueue-checker
   - name: breaking-news
     path: modules/breaking-news
 params:

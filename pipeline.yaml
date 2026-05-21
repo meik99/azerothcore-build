@@ -180,11 +180,6 @@ resources:
     icon: github
     source:
       uri: https://github.com/azerothcore/mod-cfbg.git
-  - name: bgqueue-checker
-    type: git
-    icon: github
-    source:
-      uri: https://github.com/AnchyDev/BGQueueChecker.git
   - name: breaking-news
     type: git
     icon: github
@@ -252,8 +247,6 @@ jobs:
           - get: duel-reset
             trigger: true
           - get: cross-faction-battleground
-            trigger: true
-          - get: bgqueue-checker
             trigger: true
           - get: breaking-news
             trigger: true

@@ -70,5 +70,3 @@ run:
   path: build
 outputs:
   - name: image
-output_mapping:
-  image: ((target))

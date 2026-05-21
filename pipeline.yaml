@@ -258,6 +258,8 @@ jobs:
                 file: ci/build-stage.yaml
                 vars:
                   target: authserver
+                output_mapping:
+                  image: authserver
               - put: authserver
                 params:
                   image: authserver/image.tar
@@ -267,6 +269,8 @@ jobs:
                 file: ci/build-stage.yaml
                 vars:
                   target: worldserver
+                output_mapping:
+                  image: worldserver
               - put: worldserver
                 params:
                   image: worldserver/image.tar
@@ -275,6 +279,8 @@ jobs:
                 file: ci/build-stage.yaml
                 vars:
                   target: db-import
+                output_mapping:
+                  image: db-import
               - put: db-import
                 params:
                   image: db-import/image.tar
@@ -283,6 +289,8 @@ jobs:
                 file: ci/build-stage.yaml
                 vars:
                   target: client-data
+                output_mapping:
+                  image: client-data
               - put: client-data
                 params:
                   image: client-data/image.tar
@@ -292,6 +300,8 @@ jobs:
                 file: ci/build-stage.yaml
                 vars:
                   target: tools
+                output_mapping:
+                  image: tools
               - put: tools
                 params:
                   image: tools/image.tar

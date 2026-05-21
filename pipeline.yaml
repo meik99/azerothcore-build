@@ -253,27 +253,45 @@ jobs:
             trigger: true
           - get: ci
       - in_parallel:
-          - task: authserver
-            file: ci/build-stage.yaml
-            vars:
-              target: authserver            
+          - do:
+              - task: authserver
+                file: ci/build-stage.yaml
+                vars:
+                  target: authserver
+              - put: authserver
+                params:
+                  image: authserver/image.tar
 
-          - task: worldserver
-            file: ci/build-stage.yaml
-            vars:
-              target: worldserver
+          - do:
+              - task: worldserver
+                file: ci/build-stage.yaml
+                vars:
+                  target: worldserver
+              - put: worldserver
+                params:
+                  image: worldserver/image.tar
+          - do:
+              - task: build-db-import
+                file: ci/build-stage.yaml
+                vars:
+                  target: db-import
+              - put: db-impor
+                params:
+                  image: db-impor/image.tar
+          - do:
+              - task: client-data
+                file: ci/build-stage.yaml
+                vars:
+                  target: client-data
+              - put: client-data
+                params:
+                  image: client-data/image.tar
 
-          - task: build-db-import
-            file: ci/build-stage.yaml
-            vars:
-              target: db-import
-
-          - task: client-data
-            file: ci/build-stage.yaml
-            vars:
-              target: client-data
-
-          - task: build-tools
-            file: ci/build-stage.yaml
-            vars:
-              target: tools
+          - do:
+              - task: build-tools
+                file: ci/build-stage.yaml
+                vars:
+                  target: tools
+              - put: tools
+                params:
+                  image: tools/image.tar

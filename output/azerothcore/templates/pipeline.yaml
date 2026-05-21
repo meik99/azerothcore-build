@@ -48,7 +48,8 @@ resources:
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/azerothcore.git
+      uri: https://github.com/mod-playerbots/azerothcore-wotlk.git
+      branch: Playerbots
   - name: "mod-playerbots"
     type: git
     icon: github

@@ -49,7 +49,7 @@ resources:
     icon: github
     source:
       uri: https://github.com/mod-playerbots/azerothcore-wotlk.git
-      branch: 68de938ca1312a4ec0f4502b38e3df231dcceb2e
+      branch: Playerbot
   - name: "mod-playerbots"
     type: git
     icon: github
@@ -165,11 +165,6 @@ resources:
     icon: github
     source:
       uri: "https://github.com/azerothcore/mod-duel-reset.git"
-  - name: "mod-cfbg"
-    type: git
-    icon: github
-    source:
-      uri: "https://github.com/azerothcore/mod-cfbg.git"
   - name: "mod-breaking-news-override"
     type: git
     icon: github
@@ -237,8 +232,6 @@ jobs:
           - get: "mod-desertion-warnings"
             trigger: true
           - get: "mod-duel-reset"
-            trigger: true
-          - get: "mod-cfbg"
             trigger: true
           - get: "mod-breaking-news-override"
             trigger: true

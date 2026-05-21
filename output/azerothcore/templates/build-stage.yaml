@@ -52,8 +52,6 @@ inputs:
     path: "modules/mod-desertion-warnings"
   - name: "mod-duel-reset"
     path: "modules/mod-duel-reset"
-  - name: "mod-cfbg"
-    path: "modules/mod-cfbg"
   - name: "mod-breaking-news-override"
     path: "modules/mod-breaking-news-override"
   - name: "mod-challenge-modes"

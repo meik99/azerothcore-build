@@ -22,6 +22,5 @@ modules:
   - https://github.com/Tralenor/mod-fly-in-old-world.git
   - https://github.com/azerothcore/mod-desertion-warnings.git
   - https://github.com/azerothcore/mod-duel-reset.git
-  - https://github.com/azerothcore/mod-cfbg.git
   - https://github.com/azerothcore/mod-breaking-news-override.git
   - https://github.com/poemihai/mod-challenge-modes.git

@@ -49,7 +49,7 @@ resources:
     icon: github
     source:
       uri: https://github.com/mod-playerbots/azerothcore-wotlk.git
-      branch: 68de938ca1312a4ec0f4502b38e3df231dcceb2e
+      branch: Playerbot
 
 {{- range .Values.modules }}
   - name: {{ include "repo.nameFromUri" . | quote }}

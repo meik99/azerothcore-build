@@ -4,36 +4,36 @@ resources:
     icon: docker
     source:
       repository: harbor.rynkix.com/azerothcore/authserver
-      username: ((username))
-      password: ((password))
+      username: ((registry.username))
+      password: ((registry.password))
   - name: worldserver
     type: registry-image
     icon: docker
     source:
       repository: harbor.rynkix.com/azerothcore/worldserver
-      username: ((username))
-      password: ((password))
+      username: ((registry.username))
+      password: ((registry.password))
   - name: db-import
     type: registry-image
     icon: docker
     source:
       repository: harbor.rynkix.com/azerothcore/db-import
-      username: ((username))
-      password: ((password))
+      username: ((registry.username))
+      password: ((registry.password))
   - name: client-data
     type: registry-image
     icon: docker
     source:
       repository: harbor.rynkix.com/azerothcore/client-data
-      username: ((username))
-      password: ((password))
+      username: ((registry.username))
+      password: ((registry.password))
   - name: tools
     type: registry-image
     icon: docker
     source:
       repository: harbor.rynkix.com/azerothcore/tools
-      username: ((username))
-      password: ((password))
+      username: ((registry.username))
+      password: ((registry.password))
   - name: ci
     type: git
     icon: github

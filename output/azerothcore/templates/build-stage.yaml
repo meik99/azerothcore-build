@@ -22,8 +22,6 @@ inputs:
     path: "modules/mod-rdf-expansion"
   - name: "mod-tcg-vendors"
     path: "modules/mod-tcg-vendors"
-  - name: "mod-tcg-vendors"
-    path: "modules/mod-tcg-vendors"
   - name: "mod-junk-to-gold"
     path: "modules/mod-junk-to-gold"
   - name: "mod_weather_vibe"

@@ -84,11 +84,6 @@ resources:
     icon: github
     source:
       uri: "https://github.com/lightninjay/mod-tcg-vendors.git"
-  - name: "mod-tcg-vendors"
-    type: git
-    icon: github
-    source:
-      uri: "https://github.com/lightninjay/mod-tcg-vendors.git"
   - name: "mod-junk-to-gold"
     type: git
     icon: github
@@ -202,8 +197,6 @@ jobs:
           - get: "mod-quest-loot-party"
             trigger: true
           - get: "mod-rdf-expansion"
-            trigger: true
-          - get: "mod-tcg-vendors"
             trigger: true
           - get: "mod-tcg-vendors"
             trigger: true

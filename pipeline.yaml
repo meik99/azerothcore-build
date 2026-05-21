@@ -258,61 +258,60 @@ jobs:
           - get: breaking-news
             trigger: true
           - get: ci
-      - in_parallel:
-          - do:
-              - task: authserver
-                privileged: true
-                file: ci/build-stage.yaml
-                vars:
-                  target: authserver
-                output_mapping:
-                  image: authserver
-              - put: authserver
-                params:
-                  image: authserver/image.tar
+      - do:
+          - task: authserver
+            privileged: true
+            file: ci/build-stage.yaml
+            vars:
+              target: authserver
+            output_mapping:
+              image: authserver
+          - put: authserver
+            params:
+              image: authserver/image.tar
 
-          - do:
-              - task: worldserver
-                privileged: true
-                file: ci/build-stage.yaml
-                vars:
-                  target: worldserver
-                output_mapping:
-                  image: worldserver
-              - put: worldserver
-                params:
-                  image: worldserver/image.tar
-          - do:
-              - task: build-db-import
-                privileged: true
-                file: ci/build-stage.yaml
-                vars:
-                  target: db-import
-                output_mapping:
-                  image: db-import
-              - put: db-import
-                params:
-                  image: db-import/image.tar
-          - do:
-              - task: client-data
-                privileged: true
-                file: ci/build-stage.yaml
-                vars:
-                  target: client-data
-                output_mapping:
-                  image: client-data
-              - put: client-data
-                params:
-                  image: client-data/image.tar
+      - do:
+          - task: worldserver
+            privileged: true
+            file: ci/build-stage.yaml
+            vars:
+              target: worldserver
+            output_mapping:
+              image: worldserver
+          - put: worldserver
+            params:
+              image: worldserver/image.tar
+      - do:
+          - task: build-db-import
+            privileged: true
+            file: ci/build-stage.yaml
+            vars:
+              target: db-import
+            output_mapping:
+              image: db-import
+          - put: db-import
+            params:
+              image: db-import/image.tar
+      - do:
+          - task: client-data
+            privileged: true
+            file: ci/build-stage.yaml
+            vars:
+              target: client-data
+            output_mapping:
+              image: client-data
+          - put: client-data
+            params:
+              image: client-data/image.tar
 
-          - do:
-              - task: build-tools
-                privileged: true
-                file: ci/build-stage.yaml
-                vars:
-                  target: tools
-                output_mapping:
-                  image: tools
-              - put: tools
-                params:
-                  image: tools/image.tar
+      - do:
+          - task: build-tools
+            privileged: true
+            file: ci/build-stage.yaml
+            vars:
+              target: tools
+            output_mapping:
+              image: tools
+          - put: tools
+            params:
+              image: tools/image.tar

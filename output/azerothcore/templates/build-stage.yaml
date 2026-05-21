@@ -1,0 +1,71 @@
+platform: linux
+image_resource:
+  type: registry-image
+  source:
+    repository: concourse/oci-build-task
+inputs:
+  - name: azerothcore
+    path: .
+  - name: playerbots
+    path: modules/playerbots
+  - name: "mod-playerbots"
+    path: "modules/mod-playerbots"
+  - name: "mod-autobalance"
+    path: "modules/mod-autobalance"
+  - name: "mod-solo-lfg"
+    path: "modules/mod-solo-lfg"
+  - name: "mod-transmog"
+    path: "modules/mod-transmog"
+  - name: "mod-quest-loot-party"
+    path: "modules/mod-quest-loot-party"
+  - name: "mod-rdf-expansion"
+    path: "modules/mod-rdf-expansion"
+  - name: "mod-tcg-vendors"
+    path: "modules/mod-tcg-vendors"
+  - name: "mod-tcg-vendors"
+    path: "modules/mod-tcg-vendors"
+  - name: "mod-junk-to-gold"
+    path: "modules/mod-junk-to-gold"
+  - name: "mod_weather_vibe"
+    path: "modules/mod_weather_vibe"
+  - name: "mod-pvp-titles"
+    path: "modules/mod-pvp-titles"
+  - name: "mod-player-bot-guildhouse"
+    path: "modules/mod-player-bot-guildhouse"
+  - name: "mod-player-bot-level-brackets"
+    path: "modules/mod-player-bot-level-brackets"
+  - name: "mod-playerbots-characters"
+    path: "modules/mod-playerbots-characters"
+  - name: "mod-guild-levels"
+    path: "modules/mod-guild-levels"
+  - name: "mod-dead-means-dead"
+    path: "modules/mod-dead-means-dead"
+  - name: "mod-war-effort"
+    path: "modules/mod-war-effort"
+  - name: "mod-aoe-loot"
+    path: "modules/mod-aoe-loot"
+  - name: "mod-ah-bot-plus"
+    path: "modules/mod-ah-bot-plus"
+  - name: "mod-account-achievements"
+    path: "modules/mod-account-achievements"
+  - name: "mod-low-level-rbg"
+    path: "modules/mod-low-level-rbg"
+  - name: "mod-fly-in-old-world"
+    path: "modules/mod-fly-in-old-world"
+  - name: "mod-desertion-warnings"
+    path: "modules/mod-desertion-warnings"
+  - name: "mod-duel-reset"
+    path: "modules/mod-duel-reset"
+  - name: "mod-cfbg"
+    path: "modules/mod-cfbg"
+  - name: "mod-breaking-news-override"
+    path: "modules/mod-breaking-news-override"
+params:
+  CONTEXT: .
+  DOCKERFILE: apps/docker/Dockerfile
+  TARGET: ((target))
+run:
+  path: build
+outputs:
+  - name: image
+---

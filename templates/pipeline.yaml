@@ -1,0 +1,132 @@
+resources:
+  - name: authserver
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/authserver
+      username: ((registry.username))
+      password: ((registry.password))
+      tag: latest
+  - name: worldserver
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/worldserver
+      username: ((registry.username))
+      password: ((registry.password))
+      tag: latest
+  - name: db-import
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/db-import
+      username: ((registry.username))
+      password: ((registry.password))
+      tag: latest
+  - name: client-data
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/client-data
+      username: ((registry.username))
+      password: ((registry.password))
+      tag: latest
+  - name: tools
+    type: registry-image
+    icon: docker
+    source:
+      repository: harbor.rynkix.com/azerothcore/tools
+      username: ((registry.username))
+      password: ((registry.password))
+      tag: latest
+  - name: ci
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/meik99/azerothcore-build.git
+  - name: azerothcore
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/azerothcore.git
+
+{{- range .Values.modules }}
+  - name: {{ include "repo.nameFromUri" . | quote }}
+    type: git
+    icon: github
+    source:
+      uri: {{ . | quote }}
+{{- end }}
+
+jobs:
+  - name: build
+    build_log_retention:
+      builds: 3
+    plan:
+      - in_parallel:
+          - get: azerothcore
+            trigger: true
+            params:
+              depth: 1
+          - get: ci
+{{- range .Values.modules }}
+          - get: {{ include "repo.nameFromUri" . | quote }}
+            trigger: true
+{{- end }}
+      - do:
+          - task: authserver
+            privileged: true
+            file: ci/output/azerothcore/templates/build-stage.yaml
+            vars:
+              target: authserver
+            output_mapping:
+              image: authserver
+          - put: authserver
+            params:
+              image: authserver/image.tar
+
+      - do:
+          - task: worldserver
+            privileged: true
+            file: ci/output/azerothcore/templates/build-stage.yaml
+            vars:
+              target: worldserver
+            output_mapping:
+              image: worldserver
+          - put: worldserver
+            params:
+              image: worldserver/image.tar
+      - do:
+          - task: build-db-import
+            privileged: true
+            file: ci/output/azerothcore/templates/build-stage.yaml
+            vars:
+              target: db-import
+            output_mapping:
+              image: db-import
+          - put: db-import
+            params:
+              image: db-import/image.tar
+      - do:
+          - task: client-data
+            privileged: true
+            file: ci/output/azerothcore/templates/build-stage.yaml
+            vars:
+              target: client-data
+            output_mapping:
+              image: client-data
+          - put: client-data
+            params:
+              image: client-data/image.tar
+
+      - do:
+          - task: build-tools
+            privileged: true
+            file: ci/output/azerothcore/templates/build-stage.yaml
+            vars:
+              target: tools
+            output_mapping:
+              image: tools
+          - put: tools
+            params:
+              image: tools/image.tar

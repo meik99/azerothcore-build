@@ -44,147 +44,141 @@ resources:
     icon: github
     source:
       uri: https://github.com/meik99/azerothcore-build.git
-
   - name: azerothcore
     type: git
     icon: github
     source:
       uri: https://github.com/azerothcore/azerothcore.git
-  - name: playerbots
+  - name: "mod-playerbots"
     type: git
     icon: github
     source:
-      uri: https://github.com/mod-playerbots/mod-playerbots.git
-  - name: autobalance
+      uri: "https://github.com/mod-playerbots/mod-playerbots.git"
+  - name: "mod-autobalance"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-autobalance.git
-  - name: solo-lfg
+      uri: "https://github.com/azerothcore/mod-autobalance.git"
+  - name: "mod-solo-lfg"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-solo-lfg.git
-  - name: transmog # https://github.com/azerothcore/mod-transmog needs sql stuff
+      uri: "https://github.com/azerothcore/mod-solo-lfg.git"
+  - name: "mod-transmog"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-transmog.git
-  - name: quest-loot-party
+      uri: "https://github.com/azerothcore/mod-transmog.git"
+  - name: "mod-quest-loot-party"
     type: git
     icon: github
     source:
-      uri: https://github.com/pangolp/mod-quest-loot-party.git
-  - name: rdf-expansion
+      uri: "https://github.com/pangolp/mod-quest-loot-party.git"
+  - name: "mod-rdf-expansion"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-rdf-expansion.git
-  - name: tcg-vendors
+      uri: "https://github.com/azerothcore/mod-rdf-expansion.git"
+  - name: "mod-tcg-vendors"
     type: git
     icon: github
     source:
-      uri: https://github.com/lightninjay/mod-tcg-vendors.git
-  - name: time-is-time
+      uri: "https://github.com/lightninjay/mod-tcg-vendors.git"
+  - name: "mod-tcg-vendors"
     type: git
     icon: github
     source:
-      uri: https://github.com/lightninjay/mod-tcg-vendors.git
-  - name: junk-to-gold
+      uri: "https://github.com/lightninjay/mod-tcg-vendors.git"
+  - name: "mod-junk-to-gold"
     type: git
     icon: github
     source:
-      uri: https://github.com/noisiver/mod-junk-to-gold.git
-  - name: weather-vib
+      uri: "https://github.com/noisiver/mod-junk-to-gold.git"
+  - name: "mod_weather_vibe"
     type: git
     icon: github
     source:
-      uri: https://github.com/hermensbas/mod_weather_vibe.git
-  - name: pvp-titles
+      uri: "https://github.com/hermensbas/mod_weather_vibe.git"
+  - name: "mod-pvp-titles"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-pvp-titles.git
-  - name: playerbot-guildhouse
+      uri: "https://github.com/azerothcore/mod-pvp-titles.git"
+  - name: "mod-player-bot-guildhouse"
     type: git
     icon: github
     source:
-      uri: https://github.com/DustinHendrickson/mod-player-bot-guildhouse.git
-  - name: playerbot-level-brackets
+      uri: "https://github.com/DustinHendrickson/mod-player-bot-guildhouse.git"
+  - name: "mod-player-bot-level-brackets"
     type: git
     icon: github
     source:
-      uri: https://github.com/DustinHendrickson/mod-player-bot-level-brackets.git
-  - name: playerbot-characters
+      uri: "https://github.com/DustinHendrickson/mod-player-bot-level-brackets.git"
+  - name: "mod-playerbots-characters"
     type: git
     icon: github
     source:
-      uri: https://github.com/deseven/mod-playerbots-characters.git
-  - name: guild-levels
+      uri: "https://github.com/deseven/mod-playerbots-characters.git"
+  - name: "mod-guild-levels"
     type: git
     icon: github
     source:
-      uri: https://github.com/Old-Man-Warcraft/mod-guild-levels.git
-  - name: dead-means-dead
+      uri: "https://github.com/Old-Man-Warcraft/mod-guild-levels.git"
+  - name: "mod-dead-means-dead"
     type: git
     icon: github
     source:
-      uri: https://github.com/kjack9/mod-dead-means-dead.git
-  - name: war-effort # https://github.com/azerothcore/mod-war-effort.git needs sql stuff
+      uri: "https://github.com/kjack9/mod-dead-means-dead.git"
+  - name: "mod-war-effort"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-war-effort.git
-  - name: aoe-loot
+      uri: "https://github.com/azerothcore/mod-war-effort.git"
+  - name: "mod-aoe-loot"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-aoe-loot.git
-  - name: ahbot-plus
+      uri: "https://github.com/azerothcore/mod-aoe-loot.git"
+  - name: "mod-ah-bot-plus"
     type: git
     icon: github
     source:
-      uri: https://github.com/NathanHandley/mod-ah-bot-plus.git
-  - name: account-achievements
+      uri: "https://github.com/NathanHandley/mod-ah-bot-plus.git"
+  - name: "mod-account-achievements"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-account-achievements.git
-  - name: low-level-rbg
+      uri: "https://github.com/azerothcore/mod-account-achievements.git"
+  - name: "mod-low-level-rbg"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-low-level-rbg.git
-  - name: fly-in-old-world # needs sql stuff
+      uri: "https://github.com/azerothcore/mod-low-level-rbg.git"
+  - name: "mod-fly-in-old-world"
     type: git
     icon: github
     source:
-      uri: https://github.com/Tralenor/mod-fly-in-old-world.git
-  - name: challenge-modes
+      uri: "https://github.com/Tralenor/mod-fly-in-old-world.git"
+  - name: "mod-desertion-warnings"
     type: git
     icon: github
     source:
-      uri: https://github.com/ZhengPeiRu21/mod-challenge-modes.git
-  - name: desertion-warning
+      uri: "https://github.com/azerothcore/mod-desertion-warnings.git"
+  - name: "mod-duel-reset"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-desertion-warnings.git
-  - name: duel-reset
+      uri: "https://github.com/azerothcore/mod-duel-reset.git"
+  - name: "mod-cfbg"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-duel-reset.git
-  - name: cross-faction-battleground
+      uri: "https://github.com/azerothcore/mod-cfbg.git"
+  - name: "mod-breaking-news-override"
     type: git
     icon: github
     source:
-      uri: https://github.com/azerothcore/mod-cfbg.git
-  - name: breaking-news
-    type: git
-    icon: github
-    source:
-      uri: https://github.com/azerothcore/mod-breaking-news-override.git
+      uri: "https://github.com/azerothcore/mod-breaking-news-override.git"
 
 jobs:
   - name: build
@@ -196,65 +190,63 @@ jobs:
             trigger: true
             params:
               depth: 1
-          - get: playerbots
-            trigger: true
-          - get: autobalance
-            trigger: true
-          - get: solo-lfg
-            trigger: true
-          - get: transmog
-            trigger: true
-          - get: quest-loot-party
-            trigger: true
-          - get: rdf-expansion
-            trigger: true
-          - get: tcg-vendors
-            trigger: true
-          - get: time-is-time
-            trigger: true
-          - get: junk-to-gold
-            trigger: true
-          - get: weather-vib
-            trigger: true
-          - get: pvp-titles
-            trigger: true
-          - get: playerbot-guildhouse
-            trigger: true
-          - get: playerbot-level-brackets
-            trigger: true
-          - get: playerbot-characters
-            trigger: true
-          - get: guild-levels
-            trigger: true
-          - get: dead-means-dead
-            trigger: true
-          - get: war-effort
-            trigger: true
-          - get: aoe-loot
-            trigger: true
-          - get: ahbot-plus
-            trigger: true
-          - get: account-achievements
-            trigger: true
-          - get: low-level-rbg
-            trigger: true
-          - get: fly-in-old-world
-            trigger: true
-          - get: challenge-modes
-            trigger: true
-          - get: desertion-warning
-            trigger: true
-          - get: duel-reset
-            trigger: true
-          - get: cross-faction-battleground
-            trigger: true
-          - get: breaking-news
-            trigger: true
           - get: ci
+          - get: "mod-playerbots"
+            trigger: true
+          - get: "mod-autobalance"
+            trigger: true
+          - get: "mod-solo-lfg"
+            trigger: true
+          - get: "mod-transmog"
+            trigger: true
+          - get: "mod-quest-loot-party"
+            trigger: true
+          - get: "mod-rdf-expansion"
+            trigger: true
+          - get: "mod-tcg-vendors"
+            trigger: true
+          - get: "mod-tcg-vendors"
+            trigger: true
+          - get: "mod-junk-to-gold"
+            trigger: true
+          - get: "mod_weather_vibe"
+            trigger: true
+          - get: "mod-pvp-titles"
+            trigger: true
+          - get: "mod-player-bot-guildhouse"
+            trigger: true
+          - get: "mod-player-bot-level-brackets"
+            trigger: true
+          - get: "mod-playerbots-characters"
+            trigger: true
+          - get: "mod-guild-levels"
+            trigger: true
+          - get: "mod-dead-means-dead"
+            trigger: true
+          - get: "mod-war-effort"
+            trigger: true
+          - get: "mod-aoe-loot"
+            trigger: true
+          - get: "mod-ah-bot-plus"
+            trigger: true
+          - get: "mod-account-achievements"
+            trigger: true
+          - get: "mod-low-level-rbg"
+            trigger: true
+          - get: "mod-fly-in-old-world"
+            trigger: true
+          - get: "mod-desertion-warnings"
+            trigger: true
+          - get: "mod-duel-reset"
+            trigger: true
+          - get: "mod-cfbg"
+            trigger: true
+          - get: "mod-breaking-news-override"
+            trigger: true
       - do:
           - task: authserver
             privileged: true
-            file: ci/build-stage.yaml
+            file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
               target: authserver
             output_mapping:
@@ -266,7 +258,7 @@ jobs:
       - do:
           - task: worldserver
             privileged: true
-            file: ci/build-stage.yaml
+            file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
               target: worldserver
             output_mapping:
@@ -277,7 +269,7 @@ jobs:
       - do:
           - task: build-db-import
             privileged: true
-            file: ci/build-stage.yaml
+            file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
               target: db-import
             output_mapping:
@@ -288,7 +280,7 @@ jobs:
       - do:
           - task: client-data
             privileged: true
-            file: ci/build-stage.yaml
+            file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
               target: client-data
             output_mapping:
@@ -300,7 +292,7 @@ jobs:
       - do:
           - task: build-tools
             privileged: true
-            file: ci/build-stage.yaml
+            file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
               target: tools
             output_mapping:

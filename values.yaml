@@ -1,0 +1,27 @@
+modules:
+  - https://github.com/mod-playerbots/mod-playerbots.git
+  - https://github.com/azerothcore/mod-autobalance.git
+  - https://github.com/azerothcore/mod-solo-lfg.git
+  - https://github.com/azerothcore/mod-transmog.git
+  - https://github.com/pangolp/mod-quest-loot-party.git
+  - https://github.com/azerothcore/mod-rdf-expansion.git
+  - https://github.com/lightninjay/mod-tcg-vendors.git
+  - https://github.com/lightninjay/mod-tcg-vendors.git
+  - https://github.com/noisiver/mod-junk-to-gold.git
+  - https://github.com/hermensbas/mod_weather_vibe.git
+  - https://github.com/azerothcore/mod-pvp-titles.git
+  - https://github.com/DustinHendrickson/mod-player-bot-guildhouse.git
+  - https://github.com/DustinHendrickson/mod-player-bot-level-brackets.git
+  - https://github.com/deseven/mod-playerbots-characters.git
+  - https://github.com/Old-Man-Warcraft/mod-guild-levels.git
+  - https://github.com/kjack9/mod-dead-means-dead.git
+  - https://github.com/azerothcore/mod-war-effort.git
+  - https://github.com/azerothcore/mod-aoe-loot.git
+  - https://github.com/NathanHandley/mod-ah-bot-plus.git
+  - https://github.com/azerothcore/mod-account-achievements.git
+  - https://github.com/azerothcore/mod-low-level-rbg.git
+  - https://github.com/Tralenor/mod-fly-in-old-world.git
+  - https://github.com/azerothcore/mod-desertion-warnings.git
+  - https://github.com/azerothcore/mod-duel-reset.git
+  - https://github.com/azerothcore/mod-cfbg.git
+  - https://github.com/azerothcore/mod-breaking-news-override.git

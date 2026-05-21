@@ -1,0 +1,22 @@
+platform: linux
+image_resource:
+  type: registry-image
+  source:
+    repository: concourse/oci-build-task
+inputs:
+  - name: azerothcore
+    path: .
+  - name: playerbots
+    path: modules/playerbots
+{{- range .Values.modules }}
+  - name: {{ include "repo.nameFromUri" . | quote }}
+    path: {{ printf "%s%s" "modules/" (include "repo.nameFromUri" .) | quote }}
+{{- end }}
+params:
+  CONTEXT: .
+  DOCKERFILE: apps/docker/Dockerfile
+  TARGET: ((target))
+run:
+  path: build
+outputs:
+  - name: image

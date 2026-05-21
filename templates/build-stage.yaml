@@ -6,8 +6,6 @@ image_resource:
 inputs:
   - name: azerothcore
     path: .
-  - name: playerbots
-    path: modules/playerbots
 {{- range .Values.modules }}
   - name: {{ include "repo.nameFromUri" . | quote }}
     path: {{ printf "%s%s" "modules/" (include "repo.nameFromUri" .) | quote }}

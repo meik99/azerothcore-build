@@ -174,6 +174,11 @@ resources:
     icon: github
     source:
       uri: "https://github.com/azerothcore/mod-breaking-news-override.git"
+  - name: "mod-challenge-modes"
+    type: git
+    icon: github
+    source:
+      uri: "https://github.com/poemihai/mod-challenge-modes.git"
 
 jobs:
   - name: build
@@ -235,6 +240,8 @@ jobs:
           - get: "mod-cfbg"
             trigger: true
           - get: "mod-breaking-news-override"
+            trigger: true
+          - get: "mod-challenge-modes"
             trigger: true
       - do:
           - task: authserver

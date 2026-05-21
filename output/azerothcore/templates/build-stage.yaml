@@ -6,8 +6,6 @@ image_resource:
 inputs:
   - name: azerothcore
     path: .
-  - name: playerbots
-    path: modules/playerbots
   - name: "mod-playerbots"
     path: "modules/mod-playerbots"
   - name: "mod-autobalance"
@@ -58,6 +56,8 @@ inputs:
     path: "modules/mod-cfbg"
   - name: "mod-breaking-news-override"
     path: "modules/mod-breaking-news-override"
+  - name: "mod-challenge-modes"
+    path: "modules/mod-challenge-modes"
 params:
   CONTEXT: .
   DOCKERFILE: apps/docker/Dockerfile

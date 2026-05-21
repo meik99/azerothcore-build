@@ -1,0 +1,69 @@
+platform: linux
+image_resource:
+  type: registry-image
+  source:
+    repository: concourse/oci-build-task
+inputs:
+  - name: azerothcore
+  - name: playerbots
+    path: azerothcore/modules/playerbots
+  - name: autobalance
+    path: azerothcore/modules/autobalance
+  - name: solo-lfg
+    path: azerothcore/modules/solo-lfg
+  - name: transmog
+    path: azerothcore/modules/transmog
+  - name: quest-loot-party
+    path: azerothcore/modules/quest-loot-party
+  - name: rdf-expansion
+    path: azerothcore/modules/rdf-expansion
+  - name: tcg-vendors
+    path: azerothcore/modules/tcg-vendors
+  - name: time-is-time
+    path: azerothcore/modules/time-is-time
+  - name: junk-to-gold
+    path: azerothcore/modules/junk-to-gold
+  - name: weather-vib
+    path: azerothcore/modules/weather-vib
+  - name: pvp-titles
+    path: azerothcore/modules/pvp-titles
+  - name: playerbot-guildhouse
+    path: azerothcore/modules/playerbot-guildhouse
+  - name: playerbot-level-brackets
+    path: azerothcore/modules/playerbot-level-brackets
+  - name: playerbot-characters
+    path: azerothcore/modules/playerbot-characters
+  - name: guild-levels
+    path: azerothcore/modules/guild-levels
+  - name: dead-means-dead
+    path: azerothcore/modules/dead-means-dead
+  - name: war-effort
+    path: azerothcore/modules/war-effort
+  - name: aoe-loot
+    path: azerothcore/modules/aoe-loot
+  - name: ahbot-plus
+    path: azerothcore/modules/ahbot-plus
+  - name: account-achievements
+    path: azerothcore/modules/account-achievements
+  - name: low-level-rbg
+    path: azerothcore/modules/low-level-rbg
+  - name: fly-in-old-world
+    path: azerothcore/modules/fly-in-old-world
+  - name: challenge-modes
+    path: azerothcore/modules/challenge-modes
+  - name: desertion-warning
+    path: azerothcore/modules/desertion-warning
+  - name: duel-reset
+    path: azerothcore/modules/duel-reset
+  - name: cross-faction-battleground
+    path: azerothcore/modules/cross-faction-battleground
+  - name: bgqueue-checker
+    path: azerothcore/modules/bgqueue-checker
+  - name: breaking-news
+    path: azerothcore/modules/breaking-news
+params:
+  CONTEXT: azerothcore/
+  DOCKERFILE: azerothcore/apps/docker/Dockerfile
+  TARGET: ((target))
+run:
+  path: build

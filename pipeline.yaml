@@ -1,0 +1,243 @@
+resources:
+  - name: azerothcore
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/azerothcore.git
+  - name: playerbots
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/mod-playerbots/mod-playerbots.git
+  - name: autobalance
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-autobalance.git
+  - name: solo-lfg
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-solo-lfg.git
+  - name: transmog # https://github.com/azerothcore/mod-transmog needs sql stuff
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-transmog.git
+  - name: quest-loot-party
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/pangolp/mod-quest-loot-party.git
+  - name: rdf-expansion
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-rdf-expansion.git
+  - name: tcg-vendors
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/lightninjay/mod-tcg-vendors.git
+  - name: time-is-time
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/lightninjay/mod-tcg-vendors.git
+  - name: junk-to-gold
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/noisiver/mod-junk-to-gold.git
+  - name: weather-vib
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/hermensbas/mod_weather_vibe.git
+  - name: pvp-titles
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-pvp-titles.git
+  - name: playerbot-guildhouse
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/DustinHendrickson/mod-player-bot-guildhouse.git
+  - name: playerbot-level-brackets
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/DustinHendrickson/mod-player-bot-level-brackets.git
+  - name: playerbot-characters
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/deseven/mod-playerbots-characters.git
+  - name: guild-levels
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/Old-Man-Warcraft/mod-guild-levels.git
+  - name: dead-means-dead
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/kjack9/mod-dead-means-dead.git
+  - name: war-effort # https://github.com/azerothcore/mod-war-effort.git needs sql stuff
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-war-effort.git
+  - name: aoe-loot
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-aoe-loot.git
+  - name: ahbot-plus
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/NathanHandley/mod-ah-bot-plus.git
+  - name: account-achievements
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-account-achievements.git
+  - name: low-level-rbg
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-low-level-rbg.git
+  - name: fly-in-old-world # needs sql stuff
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/Tralenor/mod-fly-in-old-world.git
+  - name: challenge-modes
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/ZhengPeiRu21/mod-challenge-modes.git
+  - name: desertion-warning
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-desertion-warnings.git
+  - name: duel-reset
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-duel-reset.git
+  - name: cross-faction-battleground
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-cfbg.git
+  - name: bgqueue-checker
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/AnchyDev/BGQueueChecker.git
+  - name: breaking-news
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/azerothcore/mod-breaking-news-override.git
+
+jobs:
+  - name: build
+    build_log_retention:
+      builds: 3
+    plan:
+      - in_parallel:
+          - get: azerothcore
+            trigger: true
+            params:
+              depth: 1
+          - get: playerbots
+            trigger: true
+          - get: autobalance
+            trigger: true
+          - get: solo-lfg
+            trigger: true
+          - get: transmog
+            trigger: true
+          - get: quest-loot-party
+            trigger: true
+          - get: rdf-expansion
+            trigger: true
+          - get: tcg-vendors
+            trigger: true
+          - get: time-is-time
+            trigger: true
+          - get: junk-to-gold
+            trigger: true
+          - get: weather-vib
+            trigger: true
+          - get: pvp-titles
+            trigger: true
+          - get: playerbot-guildhouse
+            trigger: true
+          - get: playerbot-level-brackets
+            trigger: true
+          - get: playerbot-characters
+            trigger: true
+          - get: guild-levels
+            trigger: true
+          - get: dead-means-dead
+            trigger: true
+          - get: war-effort
+            trigger: true
+          - get: aoe-loot
+            trigger: true
+          - get: ahbot-plus
+            trigger: true
+          - get: account-achievements
+            trigger: true
+          - get: low-level-rbg
+            trigger: true
+          - get: fly-in-old-world
+            trigger: true
+          - get: challenge-modes
+            trigger: true
+          - get: desertion-warning
+            trigger: true
+          - get: duel-reset
+            trigger: true
+          - get: cross-faction-battleground
+            trigger: true
+          - get: bgqueue-checker
+            trigger: true
+          - get: breaking-news
+            trigger: true
+      - in_parallel:
+          - task: build-authserver
+            privileged: true
+            file: build-stage.yaml
+            vars:
+              target: authserver
+
+          - task: build-worldserver
+            privileged: true
+            file: build-stage.yaml
+            vars:
+              target: worldserver
+
+          - task: build-db-import
+            privileged: true
+            file: build-stage.yaml
+            vars:
+              target: db-import
+
+          - task: build-client-data
+            privileged: true
+            file: build-stage.yaml
+            vars:
+              target: client-data
+
+          - task: build-tools
+            privileged: true
+            file: build-stage.yaml
+            vars:
+              target: tools

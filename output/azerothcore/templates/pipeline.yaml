@@ -242,7 +242,10 @@ jobs:
       - task: remove-skeleton-sql
         config:
           platform: linux
-          image_resource: busybox
+          image_resource:
+            type: registry-image
+            source:
+              repository: busybox
           run:
             path: /bin/sh
             args:

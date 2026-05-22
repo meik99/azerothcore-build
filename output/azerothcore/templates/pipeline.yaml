@@ -256,7 +256,6 @@ jobs:
 
       - do:
           - task: authserver
-            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -270,7 +269,6 @@ jobs:
 
       - do:
           - task: worldserver
-            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -283,7 +281,6 @@ jobs:
               image: worldserver/image.tar
       - do:
           - task: build-db-import
-            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -296,7 +293,6 @@ jobs:
               image: db-import/image.tar
       - do:
           - task: client-data
-            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -310,7 +306,6 @@ jobs:
 
       - do:
           - task: build-tools
-            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:

@@ -19,3 +19,10 @@ helm template . | awk -vout=$out -F": " '
            print $0 >> file;
        }
    }'
+
+git add -A
+git commit -m "feat: update pipeline"
+git push
+
+fly status -t ci | grep "logged in successfully" || fly login --target ci --team-name main --concourse-url http://localhost:8080
+fly -i -t ci set-pipeline --pipeline azeroth-core --config output/azerothcore/templates/pipeline.yaml

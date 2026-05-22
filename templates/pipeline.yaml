@@ -3,7 +3,7 @@ resources:
     type: registry-image
     icon: docker
     source:
-      repository: harbor.rynkix.com/azerothcore/authserver
+      repository: harbor-registry.harbor.svc.cluster.local/azerothcore/authserver
       username: ((registry.username))
       password: ((registry.password))
       tag: latest
@@ -76,6 +76,7 @@ jobs:
 {{- end }}
       - do:
           - task: authserver
+            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -83,11 +84,13 @@ jobs:
             output_mapping:
               image: authserver
           - put: authserver
+            attempts: 5
             params:
               image: authserver/image.tar
 
       - do:
           - task: worldserver
+            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -95,10 +98,12 @@ jobs:
             output_mapping:
               image: worldserver
           - put: worldserver
+            attempts: 5
             params:
               image: worldserver/image.tar
       - do:
           - task: build-db-import
+            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -106,10 +111,12 @@ jobs:
             output_mapping:
               image: db-import
           - put: db-import
+            attempts: 5
             params:
               image: db-import/image.tar
       - do:
           - task: client-data
+            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -117,11 +124,13 @@ jobs:
             output_mapping:
               image: client-data
           - put: client-data
+            attempts: 5
             params:
               image: client-data/image.tar
 
       - do:
           - task: build-tools
+            attempts: 5
             privileged: true
             file: ci/output/azerothcore/templates/build-stage.yaml
             vars:
@@ -129,5 +138,6 @@ jobs:
             output_mapping:
               image: tools
           - put: tools
+            attempts: 5
             params:
               image: tools/image.tar

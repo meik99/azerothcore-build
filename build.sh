@@ -25,4 +25,4 @@ git commit -m "feat: update pipeline"
 git push
 
 fly status -t ci | grep "logged in successfully" || fly login --target ci --team-name main --concourse-url http://localhost:8080
-fly --non-interactive -t ci set-pipeline --pipeline azeroth-core --config output/azerothcore/templates/pipeline.yaml
+fly -t ci set-pipeline --non-interactive --pipeline azeroth-core --config output/azerothcore/templates/pipeline.yaml

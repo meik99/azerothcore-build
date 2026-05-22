@@ -61,6 +61,7 @@ resources:
 
 jobs:
   - name: build
+    serial: true
     build_log_retention:
       builds: 3
     plan:

@@ -3,7 +3,7 @@ resources:
     type: registry-image
     icon: docker
     source:
-      repository: harbor-registry.harbor.svc.cluster.local/azerothcore/authserver
+      repository: harbor.rynkix.com/azerothcore/authserver
       username: ((registry.username))
       password: ((registry.password))
       tag: latest

@@ -264,6 +264,7 @@ jobs:
               image: authserver
           - put: authserver
             attempts: 5
+            timeout: 1m
             params:
               image: authserver/image.tar
 
@@ -277,6 +278,7 @@ jobs:
               image: worldserver
           - put: worldserver
             attempts: 5
+            timeout: 1m
             params:
               image: worldserver/image.tar
       - do:
@@ -289,6 +291,7 @@ jobs:
               image: db-import
           - put: db-import
             attempts: 5
+            timeout: 1m
             params:
               image: db-import/image.tar
       - do:
@@ -301,6 +304,7 @@ jobs:
               image: client-data
           - put: client-data
             attempts: 5
+            timeout: 1m
             params:
               image: client-data/image.tar
 
@@ -314,5 +318,6 @@ jobs:
               image: tools
           - put: tools
             attempts: 5
+            timeout: 1m
             params:
               image: tools/image.tar

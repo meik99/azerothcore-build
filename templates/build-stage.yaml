@@ -15,6 +15,9 @@ params:
   DOCKERFILE: apps/docker/Dockerfile
   TARGET: ((target))
 run:
-  path: rm /azerothcore/modules/mod-dead-means-dead/data/sql/db-world/base/skeleton_module_acore_string.sql && rm /azerothcore/modules/mod-fly-in-old-world/data/sql/db-world/base/skeleton_module_acore_string.sql && build
+  path: sh
+  args:
+    - -c
+    - rm /azerothcore/modules/mod-dead-means-dead/data/sql/db-world/base/skeleton_module_acore_string.sql && rm /azerothcore/modules/mod-fly-in-old-world/data/sql/db-world/base/skeleton_module_acore_string.sql && build
 outputs:
   - name: image

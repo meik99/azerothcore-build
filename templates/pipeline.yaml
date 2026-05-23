@@ -76,21 +76,6 @@ jobs:
             trigger: true
 {{- end }}
 
-      - task: remove-skeleton-sql
-        config:
-          platform: linux
-          image_resource:
-            type: registry-image
-            source:
-              repository: busybox
-          run:
-            path: /bin/sh
-            args:
-              - -cx
-              - |
-                rm /modules/mod-dead-means-dead/data/sql/db-world/base/skeleton_module_acore_string.sql
-                rm /modules/mod-fly-in-old-world/data/sql/db-world/base/skeleton_module_acore_string.sql
-
       - do:
           - task: authserver
             privileged: true
